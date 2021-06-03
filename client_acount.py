@@ -11,7 +11,9 @@ Usage:
 دسترسی نداریم , شماره حساب بانکی
 و رمز دومی که بصورت پیش فرض که در خط 22
 تعریف شده را در نظر گرفته ایم
+
 '''
+
 import time
 
 
@@ -196,7 +198,8 @@ class client(wallet):
         return 'name: {}   family: {}   ID:{}  password:{}   age: {}   phone: {}  address:{}  sex: {}    distance: {}  balance: {}'\
             .format(self.__name,self.__family,self.__ID,self.__password, self.__age, self.__phone,self.__address, self.__sex, self.__distance,self.balance)
 
-
+'''
+#example client code :
 
 a1=client('Reyhane','Farjad','123456789','rey990','19','09112345678','guilan university','female','8')
 print(a1)
@@ -206,16 +209,4 @@ print(a1.balance)
 a1.withdraw(383000)
 a1.history()
 
-'''
-#example client code :
-
-acc2=wallet() 
-acount_number=int(input("شماره حساب بانکی خود را وارد کنید:"))
-acount_password=int(input("رمز دوم خود را وارد کنید:"))
-deposit_amount=int(input("مبلغ موردنظر جهت شارژ کردن کیف پول خود را وارد کنید(تومان):"))
-acc1.deposit(acount_number,acount_password,deposit_amount)
-if (acount_number==acc1.acount[0]) and (acount_password==acc1.acount[1]):
-    total_shopping_amount=int(input("مبلغ پرداختی خرید خود را وارد کنید(تومان):"))
-    acc1.withdraw(total_shopping_amount)
-    acc1.history()
 '''
