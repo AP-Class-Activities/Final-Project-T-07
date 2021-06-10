@@ -11,6 +11,9 @@ Usage:
    2) Print the product information:    
         print(p)
 
+   3) Leave a comment for a product :
+        a2.comments(comment)
+
     
 '''
 
@@ -28,7 +31,9 @@ class Product():
         for _ in range(1):
             value = randint(100000 , 999999)
             self.__product_id = "PR" + str(value)
-        
+        self.__comments = []
+
+
     #setters and getters
     @property
     def name_of_product(self):
@@ -63,6 +68,19 @@ class Product():
     @product_id.setter
     def product_id(self,value):
         self.__product_id = value
+
+    @property
+    def comments(self):
+        return self.__comments
+
+    @comments.setter
+    def comments(self,value):
+        self.__comments = value
+
+    def comments(self,str):   #متد مربوط به کامنت گذاشتن برای محصول
+        self.__comments.append(str)
+        return self.__comments
+
 
     def __str__(self):
         return 'name:{}   ID:{}   price:{}   number:{}'\
