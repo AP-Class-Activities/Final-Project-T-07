@@ -16,12 +16,16 @@ Usage:
    4) Showing the history of salesMan wallet(include deposit and withdraw):
         a2.salesMan_history()
 
+   5) Rating to salesMan :
+        a2.rating(rate)
+
+
 '''
 
 import time
 
 class salesMan():
-    def __init__(self , fullname ,password, address , phoneNumber, id , salesman_distancde, rate = 0 ):
+    def __init__(self , fullname ,password, address , phoneNumber, id , salesman_distancde ):
         self.__fullname = fullname
         self.__password = password
         self.__address = address
@@ -30,10 +34,11 @@ class salesMan():
         if int(salesman_distancde) < 1 :
             raise ValueError('distance cant be 0 or a negetive number')
         self.__salesMan_distance = int(salesman_distancde)
-        self.__rate = rate
         self.__salesMan_balance = 0
         self.__salesMan_transaction = []
         self.__salesMan_offcode = ['MFn6a','PSy2k','RF756','AFl76','AN9k9']
+        self.__rate = []
+
 
     @property
     def fullname(self): 
@@ -151,6 +156,13 @@ class salesMan():
         else:
             print("شماره حساب یا رمز دوم حساب شما صحیح نمیباشد!")
 
+    def rating(self,rate):
+        self.__rate.append(rate)
+        sum_of_rate = 0
+        for item in self.__rate:
+            sum_of_rate += item
+        total_rate = sum_of_rate/len(self.__rate)
+        return total_rate
 
     def __str__ (self):
        return '--------------SalesMan Information--------------\n\n      Fullname:{}\n      password:{}\n      address:{}\n      phoneNumber:{}\n      ID:{}\n      distance:{}\n      rate:{}\n      Wallet Balance:{}\n      salesMan history:{}\n'\
@@ -165,5 +177,5 @@ print(a2.salesMan_balance)
 a2.salesMan_withdraw(7364526099918323,34720,250000)
 print(a2.salesMan_balance)
 a2.salesMan_history()
+a2.rating(4)
 '''
-
